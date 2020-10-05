@@ -1,7 +1,9 @@
-package com.jpa.demo;
+package com.jpa;
 
+import com.jpa.repository.UserRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
 
 @SpringBootApplication
 public class JpaExampleApplication {

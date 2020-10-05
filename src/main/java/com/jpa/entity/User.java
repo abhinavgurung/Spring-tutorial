@@ -17,6 +17,7 @@ public class User {
         this.email = email;
     }
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;

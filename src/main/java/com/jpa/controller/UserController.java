@@ -10,23 +10,26 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping
+@RequestMapping("/api/users")
 public class UserController {
+
     @Autowired
     private UserRepository userRepository;
 
     //get all users
     @GetMapping("/all")
     public List<User> getAllUsers(){
+        System.out.println("inside all api ");
         return this.userRepository.findAll();
     }
     //get a user by id
     @GetMapping("/{id}")
     public User getUserById(@PathVariable(value="id") long userId){
+        System.out.println("inside get a user");
         return  this.userRepository.findById(userId).orElseThrow(()-> new ResourceNotFoundException("User not found with id: "+ userId));
     }
     //create user
-    @PostMapping("/create")
+    @PostMapping(path="/create")
     public User createUser(@RequestBody User user){
         System.out.println("inside create user");
         return this.userRepository.save(user);
